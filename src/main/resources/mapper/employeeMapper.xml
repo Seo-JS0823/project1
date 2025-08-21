@@ -3,11 +3,66 @@
 
 <mapper namespace="com.emp.employee.EmployeeMapper">
 	
-	<!-- 직원 등록 -->
+	<!-- 직원 등록 : employeeInsert -->
 	<insert id="employeeInsert">
-		
+		INSERT INTO employees
+			(employee_id,
+			 department_id,
+			 worktype_id,
+			 position_id,
+			 name,
+			 gender,
+			 birthdate,
+			 <if test="phone_num != null">
+			 	phone_num ,
+			 </if>
+			 <if test="email != null">
+			 	email ,
+			 </if>
+			 address,
+			 employment_date)
+		VALUES
+			(#{employee_id},
+			#{department_id},
+			#{worktype_id},
+			#{position_id},
+			#{name},
+			#{gender},
+			#{birthdate},
+			<if test="phone_num != null">
+				#{phone_num} ,
+			</if>
+			<if test="email != null">
+				#{email} ,
+			</if>
+			(SELECT province || ' ' || search AS address FROM address WHERE address_id = #{address_id}),
+			#{employment_date}
+			)
 	</insert>
 	
+	<!-- 모든 부서의 당일 출퇴근 기록 조회 : getNowDateAttendanceList -->
+	<select id="getNowDateAttendanceList">
+		
+	</select>
+	
+	<!--  -->
+	<!--  -->
+	<!--  -->
+	<!--  -->
+	<!--  -->
+	<!--  -->
+	<!--  -->
+	<!--  -->
+	<!--  -->
+	<!--  -->
+	<!--  -->
+	<!--  -->
+	<!--  -->
+	<!--  -->
+	<!--  -->
+	<!--  -->
+	<!--  -->
+	<!--  -->
 	
 	
 </mapper>

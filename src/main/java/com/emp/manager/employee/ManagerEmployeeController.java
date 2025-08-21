@@ -21,9 +21,6 @@ public class ManagerEmployeeController {
 	@Autowired
 	private EmployeeMapper empMapper;
 	
-	@Autowired
-	private EmployeeID createID;
-	
 	/* 관리자 메인 페이지 보여주기 */
 	@GetMapping("/")
 	public ModelAndView manageForm() {
@@ -49,12 +46,16 @@ public class ManagerEmployeeController {
 		
 		String id = "";
 		try {
-			id = createID.createEmpID(
+			id = employee.getDepartment_id() + EmployeeID.createEmpID(
 					new SimpleDateFormat("yyyy-mm-dd").parse(employee.getBirthdate()),
 					new SimpleDateFormat("yyyy-mm-dd").parse(employee.getEmployment_date()));
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
+		System.out.println(id);
+		employee.setEmployee_id(id);
+		
+		empMapper.employeeInsert(employee);
 		
 		/* 보여줄 페이지 */
 		mav.setViewName("redirect:/manage/");
