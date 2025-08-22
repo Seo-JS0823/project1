@@ -51,6 +51,7 @@ public class ManagerEmployeeController {
 					new SimpleDateFormat("yyyy-mm-dd").parse(employee.getEmployment_date()));
 		} catch (ParseException e) {
 			e.printStackTrace();
+			throw new IllegalStateException("Parsing Error : " + e.getMessage());
 		}
 		System.out.println(id);
 		employee.setEmployee_id(id);
@@ -61,5 +62,11 @@ public class ManagerEmployeeController {
 		mav.setViewName("redirect:/manage/");
 		return mav;
 	}
+	
+	/*  */
+	/*  */
+	/*  */
+	/*  */
+	/*  */
 	
 }

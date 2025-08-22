@@ -2,6 +2,7 @@ package com.emp.employee;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -115,5 +116,15 @@ public class EmployeeController {
 		
 		return mav;
 	}
+	
+	
+	// 직원 정보 수정 페이지 보여주기
+	// updateForm
+	
+	
+	// 직원 정보 수정 로직 실행
+	// update
+	
+	
 	
 }

@@ -3,7 +3,6 @@ package com.emp.address;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,7 +14,7 @@ public class AddressController {
 	private AddressMapper addressMapper;
 	
 	@GetMapping("/address")
-	public List<AddressDTO> search(@RequestParam String keyword, Model model) {
+	public List<AddressDTO> search(@RequestParam String keyword) {
 		
 		List<AddressDTO> list = addressMapper.getAddressList(keyword);
 		

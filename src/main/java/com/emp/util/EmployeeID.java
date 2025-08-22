@@ -1,6 +1,5 @@
 package com.emp.util;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -32,11 +31,13 @@ public class EmployeeID {
 		return id;
 	}
 	
+	/*
 	public static void main(String[] args) throws ParseException {
 		for (int i = 0; i < 10; i++) {
 			String id = EmployeeID.createEmpID(new SimpleDateFormat("yyyy-mm-dd").parse("1970-01-06"), new SimpleDateFormat("yyyy-mm-dd").parse("2025-05-16"));
 			System.out.println(i + "번째: " + id);
 		}
 	}
+	*/
 	
 }

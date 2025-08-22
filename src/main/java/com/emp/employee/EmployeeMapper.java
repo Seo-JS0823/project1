@@ -8,21 +8,6 @@ public interface EmployeeMapper {
 	/* 직원 등록 */
 	public void employeeInsert(EmployeeDTO employee);
 	
-	/* ======================= */
-	
-	/* select 1 */
-	
-	
-	/* select All */
-	
-	
-	/* insert */
-	
-	
-	/* update */
-	
-	
-	/* delete */
 	
 	
 }

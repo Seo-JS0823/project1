@@ -84,8 +84,8 @@ public class EmployeeDTO {
 		this.emp_flag = emp_flag;
 	}
 
-	public void setAddress_id(int address_id) {
-		this.address_id = address_id;
+	public void setAddress_id(String address_id) {
+		this.address_id = Integer.parseInt(address_id);
 	}
 	
 	/* Getter 영역 */
